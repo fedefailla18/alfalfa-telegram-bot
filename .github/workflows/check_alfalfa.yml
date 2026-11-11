@@ -2,8 +2,7 @@ name: Monitor Precios Alfalfa
 
 on:
   schedule:
-    # Se ejecuta todos los lunes a las 12:00 UTC (09:00 AM hora Argentina)
-    - cron: '0 12 * * 1'
+    - cron: '*/5 * * * *'
   # Permite ejecutarlo manualmente cuando quieras desde la web
   workflow_dispatch:
 
