@@ -3,8 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 
 URL = "https://todoagro.com.ar"
-TOKEN = os.environ["TELEGRAM_TOKEN"]
-CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
+TOKEN = os.environ["TELEGRAM_TOKEN"].strip()
+CHAT_ID = os.environ["TELEGRAM_CHAT_ID"].strip()
+
 
 def obtener_precios():
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -52,7 +53,7 @@ def obtener_precios():
     return "\n".join(lineas)
 
 def enviar_telegram(mensaje):
-    api_url = f"https://telegram.org{TOKEN}/sendMessage"
+    api_url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     payload = {
         "chat_id": CHAT_ID,
         "text": mensaje,
