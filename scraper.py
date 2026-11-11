@@ -2,7 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://www.todoagro.com.ar/mercados/"
+URL = "https://todoagro.com.ar"
 TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
